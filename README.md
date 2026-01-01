@@ -11,7 +11,14 @@ This application calculates the monetary value of an MLB qualifying offer, which
 
 ## Installation & Setup
 
-### Step 1: Create and Activate Virtual Environment
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/andrewpaige1/qualifying-offer-calculator.git
+cd qualifying-offer-calculator
+```
+
+### Step 2: Create and Activate Virtual Environment
 
 ```bash
 cd backend
@@ -19,13 +26,13 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### Step 2: Install Backend Dependencies
+### Step 3: Install Backend Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 3: Install Frontend Dependencies
+### Step 4: Install Frontend Dependencies
 
 Navigate to the frontend directory:
 
