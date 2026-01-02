@@ -45,9 +45,27 @@ def fetch_and_clean_data():
     
 df = fetch_and_clean_data()
 
+@app.get("/salaries/stats")
+def get_stats(player_amount: int = Query(default=125)):
+
+    top_df = df.nlargest(player_amount, 'Salary')
+    
+    avg_val = top_df['Salary'].mean()
+    median_value = top_df['Salary'].median()
+    top_players_json = top_df.replace({pd.NA: None, float('nan'): None}).to_dict(orient="records")
+    
+    return {
+        "stats_for_top_n": player_amount,
+        "average": None if pd.isna(avg_val) else avg_val,
+        "median": None if pd.isna(median_value) else median_value,
+        "top_players_included": top_players_json
+    }
+    
 @app.get("/salaries/mean")
 def get_mean_salary(player_amount: int = Query(default=125)):
-    
+    global df
+    df = fetch_and_clean_data()
+
     top_df = df.nlargest(player_amount, 'Salary')
     
     avg_val = top_df['Salary'].mean()
@@ -60,9 +78,10 @@ def get_mean_salary(player_amount: int = Query(default=125)):
         "top_players_included": top_players_json
     }
 
+
 @app.get("/salaries/median")
 def get_median_salary(player_amount: int = Query(default=125)):
-    
+
     top_df = df.nlargest(player_amount, 'Salary')
     
     median_value = top_df['Salary'].median()
