@@ -1,6 +1,6 @@
 # Qualifying Offer Calculator
 
-**Live Version:** https://qualifying-offer-calculator.vercel.app/
+> **[View Live Demo](https://qualifying-offer-calculator.vercel.app/)**
 
 ## Project Description
 
