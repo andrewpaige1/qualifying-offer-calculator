@@ -1,3 +1,5 @@
+# Qualifying Offer Calculator
+
 ## Project Description
 
 This application calculates the monetary value of an MLB qualifying offer, which is defined as the average of the 125 highest salaries from the previous season. The application fetches salary data from a provided source, processes it, and displays the qualifying offer amount along with relevant statistics and visualizations.
@@ -86,3 +88,67 @@ You will see the dashboard displaying:
 - Navigation to additional views (Distribution, Median)
 
 The application automatically fetches fresh data from the source each time you refresh.
+
+## API Endpoints
+
+The backend provides the following endpoints:
+
+### GET `/salaries/mean`
+Returns the mean salary of the top N players.
+
+**Query Parameters:**
+- `player_amount` (int, optional): Number of top-paid players to consider. Default: 125
+
+**Response:**
+```json
+{
+  "stats_for_top_n": 125,
+  "average": 1234567.89,
+  "top_players_included": [...]
+}
+```
+
+### GET `/salaries/median`
+Returns the median salary of the top N players.
+
+**Query Parameters:**
+- `player_amount` (int, optional): Number of top-paid players to consider. Default: 125
+
+**Response:**
+```json
+{
+  "stats_for_top_n": 125,
+  "median": 1234567.89,
+  "top_players_included": [...]
+}
+```
+
+### GET `/salaries/refresh-mean`
+Refreshes the salary data from the source and returns the mean salary of the top N players.
+
+**Query Parameters:**
+- `player_amount` (int, optional): Number of top-paid players to consider. Default: 125
+
+**Response:**
+```json
+{
+  "stats_for_top_n": 125,
+  "average": 1234567.89,
+  "top_players_included": [...]
+}
+```
+
+### GET `/salaries/refresh-median`
+Refreshes the salary data from the source and returns the median salary of the top N players.
+
+**Query Parameters:**
+- `player_amount` (int, optional): Number of top-paid players to consider. Default: 125
+
+**Response:**
+```json
+{
+  "stats_for_top_n": 125,
+  "median": 1234567.89,
+  "top_players_included": [...]
+}
+```
