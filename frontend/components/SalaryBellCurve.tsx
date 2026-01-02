@@ -34,6 +34,7 @@ export default function SalaryHistogram({ players, qualifyingOffer }: SalaryHist
   const leftBound = Math.max(0, cutoffSalary);
   const maxDisplay = validSalaries[0];
 
+  // group salaries into equal width buckets. buckets are 2 million dollars in width.
   const data = Array.from({ length: Math.ceil((maxDisplay - leftBound) / BIN_WIDTH) }, (_, i) => {
     const start = leftBound + (i * BIN_WIDTH);
     const count = validSalaries.filter(s => s >= start && s < start + BIN_WIDTH).length;
