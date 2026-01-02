@@ -47,7 +47,6 @@ df = fetch_and_clean_data()
 
 @app.get("/salaries/stats")
 def get_stats(player_amount: int = Query(default=125)):
-
     top_df = df.nlargest(player_amount, 'Salary')
     
     avg_val = top_df['Salary'].mean()
