@@ -1,5 +1,7 @@
 # Qualifying Offer Calculator
 
+**Live Version:** https://qualifying-offer-calculator.vercel.app/
+
 ## Project Description
 
 This application calculates the monetary value of an MLB qualifying offer, which is defined as the average of the 125 highest salaries from the previous season. The application fetches salary data from a provided source, processes it, and displays the qualifying offer amount along with relevant statistics and visualizations.
