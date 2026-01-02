@@ -3,7 +3,10 @@ import PlayersTable from "@/components/PlayersTable";
 import StatCard from "@/components/StatCard";
 
 export default async function Median() {
-  const response = await fetch("http://localhost:8000/salaries/median?player_amount=125", { cache: 'no-store' })
+  const apiUrl = process.env.NODE_ENV === 'production' 
+    ? 'https://qualifying-offer-calculator-production.up.railway.app'
+    : 'http://localhost:8000';
+  const response = await fetch(`${apiUrl}/salaries/median?player_amount=125`, { cache: 'no-store' })
   const data = await response.json()
 
   return (

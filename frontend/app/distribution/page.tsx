@@ -3,7 +3,10 @@ import SalaryBellCurve from "@/components/SalaryBellCurve";
 import StatCard from "@/components/StatCard";
 
 export default async function Distribution() {
-  const response = await fetch("http://localhost:8000/salaries/mean?player_amount=125")
+  const apiUrl = process.env.NODE_ENV === 'production' 
+    ? 'https://qualifying-offer-calculator-production.up.railway.app'
+    : 'http://localhost:8000';
+  const response = await fetch(`${apiUrl}/salaries/mean?player_amount=125`)
   const data = await response.json()
 
   return (
