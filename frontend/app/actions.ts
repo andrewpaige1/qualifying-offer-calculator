@@ -17,5 +17,6 @@ async function getPlayerData(slug: string) {
 
 export async function refreshPlayerData(slug: string) {
   revalidatePath('/');
+  // clear cache to ensure data is not stale
   return getPlayerData(slug);
 }
