@@ -52,7 +52,6 @@ statistics can refer to the same dataset for reference
 
 @app.get("/salaries/stats")
 def get_stats(player_amount: int = Query(default=125)):
-    #global df
     
     top_df = df.nlargest(player_amount, 'Salary')
     
