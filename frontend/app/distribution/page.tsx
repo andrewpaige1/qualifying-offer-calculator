@@ -6,7 +6,7 @@ export default async function Distribution() {
   const apiUrl = process.env.NODE_ENV === 'production' 
     ? 'https://qualifying-offer-calculator-production.up.railway.app'
     : 'http://localhost:8000';
-  const response = await fetch(`${apiUrl}/salaries/stats?player_amount=125`)
+  const response = await fetch(`${apiUrl}/salaries/stats?player_amount=125`,  { cache: 'no-store' })
   const data = await response.json()
 
   return (
