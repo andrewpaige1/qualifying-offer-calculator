@@ -2,8 +2,6 @@ import ButtonContainer from "@/components/ButtonContainer";
 import SalaryBellCurve from "@/components/SalaryBellCurve";
 import StatCard from "@/components/StatCard";
 
-export const dynamic = 'force-dynamic';
-
 export default async function Distribution() {
   const apiUrl = process.env.NODE_ENV === 'production' 
     ? 'https://qualifying-offer-calculator-production.up.railway.app'
