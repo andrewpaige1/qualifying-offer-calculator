@@ -2,6 +2,8 @@ import ButtonContainer from "@/components/ButtonContainer";
 import PlayersTable from "@/components/PlayersTable";
 import StatCard from "@/components/StatCard";
 
+export const dynamic = 'force-dynamic';
+
 interface PlayerData {
   stats_for_top_n: number;
   average: number;
