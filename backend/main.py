@@ -67,6 +67,7 @@ def get_median_salary(player_amount: int = Query(default=125)):
     
     median_value = top_df['Salary'].median()
 
+    # convert NaN values to None for valid JSON response
     top_players_json = top_df.replace({pd.NA: None, float('nan'): None}).to_dict(orient="records")
 
     return {
@@ -85,6 +86,7 @@ def refresh_median(player_amount: int = Query(default=125,)):
     
     median_value = top_df['Salary'].median()
 
+    # convert NaN values to None for valid JSON response
     top_players_json = top_df.replace({pd.NA: None, float('nan'): None}).to_dict(orient="records")
 
     return {
@@ -102,6 +104,7 @@ def refresh_mean(player_amount: int = Query(default=125)):
     
     avg_val = top_df['Salary'].mean()
 
+    # convert NaN values to None for valid JSON response
     top_players_json = top_df.replace({pd.NA: None, float('nan'): None}).to_dict(orient="records")
 
     return {

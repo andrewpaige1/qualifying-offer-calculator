@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 
 const RefreshButton = ({ refreshMean }: { refreshMean: boolean }) => {
   
+  // use transitioon hook to fetch data in the background for smoother user experience
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
